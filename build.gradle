@@ -1,0 +1,34 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        // For generating jars, the spring boot gradle plugin will be utilised.
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+description = "Demo project for Spring Boot Gradle Example"
+
+apply plugin: 'java'                                // java plugin
+apply plugin: 'org.springframework.boot'            // spring boot framework plugin
+
+jar {
+    baseName = 'spring-boot-gradle-example'       // jar file name
+    version =  '1.0.0'                            // application version
+}
+
+dependencies {
+    // spring boot web application dependency
+    compile("org.springframework.boot:spring-boot-starter-web")
+}
+
+sourceCompatibility = 1.8        // Java 1.8
+targetCompatibility = 1.8
+
+group 'spring-boot-demo'
+version '1.0-SNAPSHOT'
